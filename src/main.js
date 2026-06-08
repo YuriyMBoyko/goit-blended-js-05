@@ -1,3 +1,7 @@
+import { loadCurrentTheme } from './js/theme-switcher.js'
+
+loadCurrentTheme();
+
 /*
   Створи список справ.
   На сторінці є два інпути які має вводиться назва і текст задачі.
