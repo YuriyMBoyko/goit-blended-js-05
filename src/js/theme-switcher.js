@@ -1,13 +1,13 @@
 import { refs } from './refs.js';
+import { localStorageApi } from './local-storage-api.js';
 
-const keyTheme = 'theme';
 const valueDark = 'dark';
 const valueLight = 'light';
 const classDark = 'theme-dark';
 const classLight = 'theme-light';
 
 export function loadCurrentTheme() {
-  const theme = localStorage.getItem(keyTheme);
+  const theme = localStorageApi.currentTheme;
   if (theme === valueDark) {
       document.body.classList.add(classDark);
       document.body.classList.remove(classLight);
@@ -23,6 +23,6 @@ if ((refs) && (refs.toggleThemeButton)) {
     document.body.classList.toggle(classLight);
 
     const theme = document.body.classList.contains(classDark) ? valueDark : valueLight;
-    localStorage.setItem(keyTheme, theme);
+    localStorageApi.currentTheme = theme;
   })
 }
