@@ -1,6 +1,8 @@
-import { loadCurrentTheme } from './js/theme-switcher.js'
+import { loadCurrentTheme } from './js/theme-switcher.js';
+import { TaskDispatcher } from './js/render-tasks.js';
 
 loadCurrentTheme();
+TaskDispatcher.init('taskList');
 
 /*
   Створи список справ.
